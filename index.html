@@ -16,9 +16,22 @@
   <div class="mytext" style="float:left; width: 500px; font-size: 170%">
     簡単な証明をしてみよう！
 　</div>
-  <div style="clear:both;"></div>
+  <button type="submit">
+    証明を作成
+  </button>
+  <div style="clear:both;">
+  </div>
 <!--  Google Blockly を表示する部分  -->
-<div id="blocklyDiv" style="float:left; height: 700px; min-width: 100%;"></div>
+<div id="blocklyDiv" style="float:left; height: 700px; min-width: 60%;"></div>
+<!-- 問題画像を表示する部分 -->
+<div style="float:right">
+ <img class="fit-picture" src="1.jpg">
+ <!-- 証明の文章を作成する部分　-->
+ <div style="width: 150px; font-size: 170%">
+ 
+ </div>
+</div>
+
 <!--  表示するブロックの定義  -->
   <xml id="toolbox" style="display: none">
    <category name="証明する△" colour="0">
@@ -45,8 +58,7 @@
     <block type="line_5"></block>
     <block type="line_6"></block>
    </category>
-   <category name="角" colour="120">
-    
+   <category name="角" colour="120"> 
    </category>
    <category name="合同条件" colour="150">
     <block type="congruence_1"></block>
@@ -54,7 +66,6 @@
     <block type="congruence_3"></block>
    </category>
    <category name="性質" colour="180">
-   
    </category>
   </xml>
 
