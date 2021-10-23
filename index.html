@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
   <script src="javascript_compressed.js"></script>
@@ -18,8 +19,15 @@
     簡単な証明をしてみよう！
 　</div>
   <!-- 実行ボタン -->
-  <button onclick="run()">証明を作成
-  </button>
+  <button id="runButton" style="float: left;background-color: green ;color: #fff;">
+    <div style="float:left;  font-size: 170%">
+     実行
+    </div>
+    <div style="float:left; font-size: 70%">
+        ブロックを動かしたら<br>
+        ここを押してください
+    </div>
+  </button>    
   <div style="clear:both;">
   </div>
 <!--  Google Blockly を表示する部分  -->
@@ -28,9 +36,8 @@
 <div style="float:right; min-width: 30%;">
  <img class="fit-picture" src="1.jpg">
  <!-- 証明の文章を作成する部分　-->
- <div style="width: 150px; font-size: 170%">
- 
- </div>
+ <div id="SidePreview" style="padding: 10px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px; background-color: #ffff99; float:right; height: 350px; min-width: 100%;">
+</div>
 </div>
 
 <!--  表示するブロックの定義  -->
@@ -101,7 +108,15 @@
         );
   //  はじめに表示するブロック　の実行
   Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
-
-</script>
+ </script>
+ <script>
+  // ここから、jQueryを呼び出して関数を利用
+ $(function() {
+  // 「実行」ボタン　が押された　　（JavaScript実行）
+  var runButton = document.getElementById("runButton");
+  runButton.addEventListener("click");
+})
+  
+ </script>
 </body>
 </html>
