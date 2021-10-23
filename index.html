@@ -7,6 +7,7 @@
   <script src="javascript_compressed.js"></script>
   <script src="my_block.js"></script>
   <script src="ja.js"></script>
+  <script src="button.js"></script>
 </head>
 <body>
   <!--  ページ上の部分　CSSで装飾する  -->
@@ -16,15 +17,15 @@
   <div class="mytext" style="float:left; width: 500px; font-size: 170%">
     簡単な証明をしてみよう！
 　</div>
-  <button type="submit">
-    証明を作成
+  <!-- 実行ボタン -->
+  <button onclick="run()">証明を作成
   </button>
   <div style="clear:both;">
   </div>
 <!--  Google Blockly を表示する部分  -->
-<div id="blocklyDiv" style="float:left; height: 700px; min-width: 60%;"></div>
+<div id="blocklyDiv" style="float:left; height: 650px; min-width: 60%;"></div>
 <!-- 問題画像を表示する部分 -->
-<div style="float:right">
+<div style="float:right; min-width: 30%;">
  <img class="fit-picture" src="1.jpg">
  <!-- 証明の文章を作成する部分　-->
  <div style="width: 150px; font-size: 170%">
@@ -71,7 +72,7 @@
 
 <!--  はじめに表示するブロックの定義  -->
 <xml id="startBlocks" style="display: none">
-  <block type="_1" x="300" y="15" ></block>
+  <block type="_1" x="-350" y="-300" ></block>
 </xml>
  <script>
   var myRunCode;
@@ -87,7 +88,7 @@
       snap: true,
           },
     trashcan: true,
-    scrollbars: true,
+    scrollbars: false,
     zoom: {
     　controls: true,
       wheel: false,
