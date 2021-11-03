@@ -5,14 +5,14 @@ Blockly.defineBlocksWithJsonArray(
     "args0": [
       {
         "type": "input_value",
-        "name": "triangle"
+        "name": "left"
       },
       {
         "type": "input_dummy"
       },
       {
         "type": "input_value",
-        "name": "NAME"
+        "name": "right"
       }
     ],
     "nextStatement": null,
@@ -150,7 +150,7 @@ Blockly.defineBlocksWithJsonArray(
       },
       {
         "type": "input_value",
-        "name": "NAME"
+        "name": "common"
       },
       {
         "type": "input_dummy"
@@ -265,99 +265,99 @@ Blockly.defineBlocksWithJsonArray(
 
 
 Blockly.JavaScript['_1'] = function(block) {
-  var value_triangle = Blockly.JavaScript.valueToCode(block, 'triangle', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_left = Blockly.JavaScript.valueToCode(block, 'left', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_right = Blockly.JavaScript.valueToCode(block, 'right', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '"'+value_left+"と"+value_right+"について"+'"';
   return code;
 };
 
 Blockly.JavaScript['triangle_abc'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = '△ABC';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['triangle_adc'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = '△ADC';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_1'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'AB';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_2'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'AD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_3'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'BC';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_4'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'DC';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_5'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'AC';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_6'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'CA';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['congruence_1'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '３組の辺がそれぞれ等しいので';
   return code;
 };
 
 Blockly.JavaScript['congruence_2'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '２組の辺とその間の角がそれぞれ等しいので';
   return code;
 };
 
 Blockly.JavaScript['congruence_3'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '１組の辺とその両端の角がそれぞれ等しいので';
   return code;
 };
 
 Blockly.JavaScript['given'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '"仮定より"';
   return code;
 };
 
 Blockly.JavaScript['common'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'common', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '"共通な""'+value_name+"より"+'"';
   return code;
 };
 
@@ -380,14 +380,14 @@ Blockly.JavaScript['reason_2'] = function(block) {
 
 Blockly.JavaScript['line'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = '"辺"';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['angle'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = '"角"';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
