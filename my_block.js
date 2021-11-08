@@ -330,19 +330,19 @@ Blockly.JavaScript['line_6'] = function(block) {
 
 Blockly.JavaScript['congruence_1'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '３組の辺がそれぞれ等しいので';
+  var code = '３組の辺がそれぞれ等しいので<br>';
   return code;
 };
 
 Blockly.JavaScript['congruence_2'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '２組の辺とその間の角がそれぞれ等しいので';
+  var code = '２組の辺とその間の角がそれぞれ等しいので<br>';
   return code;
 };
 
 Blockly.JavaScript['congruence_3'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '１組の辺とその両端の角がそれぞれ等しいので';
+  var code = '１組の辺とその両端の角がそれぞれ等しいので<br>';
   return code;
 };
 
@@ -366,7 +366,7 @@ Blockly.JavaScript['reason_1'] = function(block) {
   var value_reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = value_parallel+'より'+value_reason+'ので'+statements_line_block+'<br>';
   return code;
 };
 
@@ -374,7 +374,7 @@ Blockly.JavaScript['reason_2'] = function(block) {
   var value_line_1 = Blockly.JavaScript.valueToCode(block, 'line_1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_line_2 = Blockly.JavaScript.valueToCode(block, 'line_2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = value_line_1+'='+value_line_2;
+  var code = value_line_1+'='+value_line_2+'<br>';
   return code;
 };
 
@@ -396,6 +396,6 @@ Blockly.JavaScript['reason_3'] = function(block) {
   var value_line_1 = Blockly.JavaScript.valueToCode(block, 'line_1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_line_2 = Blockly.JavaScript.valueToCode(block, 'line_2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = value_line_1+'≡'+value_line_2+'<br>';
   return code;
 };
