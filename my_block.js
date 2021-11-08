@@ -268,7 +268,7 @@ Blockly.JavaScript['_1'] = function(block) {
   var value_left = Blockly.JavaScript.valueToCode(block, 'left', Blockly.JavaScript.ORDER_ATOMIC);
   var value_right = Blockly.JavaScript.valueToCode(block, 'right', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '"'+value_left+"と"+value_right+"について"+'"';
+  var code = value_left+"と"+value_right+"について<br>";
   return code;
 };
 
@@ -349,7 +349,7 @@ Blockly.JavaScript['congruence_3'] = function(block) {
 Blockly.JavaScript['given'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '"仮定より"';
+  var code = '仮定より'+statements_line_block+'<br>';
   return code;
 };
 
@@ -357,7 +357,7 @@ Blockly.JavaScript['common'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'common', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '"共通な""'+value_name+"より"+'"';
+  var code = '共通な'+value_name+'より'+statements_line_block+'<br>';
   return code;
 };
 
@@ -374,20 +374,20 @@ Blockly.JavaScript['reason_2'] = function(block) {
   var value_line_1 = Blockly.JavaScript.valueToCode(block, 'line_1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_line_2 = Blockly.JavaScript.valueToCode(block, 'line_2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = value_line_1+'='+value_line_2;
   return code;
 };
 
 Blockly.JavaScript['line'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '"辺"';
+  var code = '辺';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['angle'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '"角"';
+  var code = '角';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };

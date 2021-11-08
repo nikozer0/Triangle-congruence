@@ -111,8 +111,9 @@
         var code = Blockly.JavaScript.workspaceToCode(workspace);
         //プログラムを実行
         try{
-         var result= eval(code);
-         document.getElementById('SidePreview').innerText = result
+          console.log(code)
+         var result= eval('"'+code+'"');
+         document.getElementById('SidePreview').innerHTML = result
         }
         catch(e){
           alert(e);
