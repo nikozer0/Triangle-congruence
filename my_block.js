@@ -1,6 +1,6 @@
 Blockly.defineBlocksWithJsonArray(
   [{
-    "type": "_1",
+    "type": "start",
     "message0": "%1 と %2 %3 について",
     "args0": [
       {
@@ -93,6 +93,15 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
+    "type": "angle_1",
+    "message0": "∠ABC",
+    "inputsInline": true,
+    "output": null,
+    "colour": 120,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
     "type": "congruence_1",
     "message0": "３組の辺がそれぞれ等しいので",
     "inputsInline": true,
@@ -123,6 +132,26 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
+    "type": "congruence_4",
+    "message0": "合同な図形では対応する辺の長さは等しくなるので",
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "congruence_5",
+    "message0": "合同な図形では対応する角の大きさは等しくなるので",
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
     "type": "given",
     "message0": "仮定より %1 %2",
     "args0": [
@@ -142,16 +171,9 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
-    "type": "common",
-    "message0": "共通な %1 %2 より %3 %4",
+    "type": "common_1",
+    "message0": "共通な辺より  %1 %2",
     "args0": [
-      {
-        "type": "input_dummy"
-      },
-      {
-        "type": "input_value",
-        "name": "common"
-      },
       {
         "type": "input_dummy"
       },
@@ -168,8 +190,46 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
-    "type": "reason_1",
-    "message0": "%1 より %2 %3 ので %4 %5",
+    "type": "common_2",
+    "message0": "共通な角より  %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "line_block"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "vertical angles",
+    "message0": "対頂角は等しいので  %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "line_block"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "parallel_1",
+    "message0": "%1 // %2 %3 より平行線の錯角は等しくなるので %4 %5",
     "args0": [
       {
         "type": "input_value",
@@ -198,7 +258,37 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
-    "type": "reason_2",
+    "type": "parallel_2",
+    "message0": "%1 // %2 %3 より平行線の同位角は等しくなるので %4 %5",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "parallel"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "reason"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "line_block"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "equal",
     "message0": "%1 = %2 %3",
     "args0": [
       {
@@ -221,25 +311,7 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
-    "type": "line",
-    "message0": "辺",
-    "inputsInline": true,
-    "output": null,
-    "colour": 60,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  {
-    "type": "angle",
-    "message0": "角",
-    "inputsInline": true,
-    "output": null,
-    "colour": 60,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  {
-    "type": "reason_3",
+    "type": "congruence",
     "message0": "%1 ≡ %2 %3",
     "args0": [
       {
@@ -260,11 +332,12 @@ Blockly.defineBlocksWithJsonArray(
     "colour": 60,
     "tooltip": "",
     "helpUrl": ""
-  }]
+  }],
+ 
 );
 
 
-Blockly.JavaScript['_1'] = function(block) {
+Blockly.JavaScript['start'] = function(block) {
   var value_left = Blockly.JavaScript.valueToCode(block, 'left', Blockly.JavaScript.ORDER_ATOMIC);
   var value_right = Blockly.JavaScript.valueToCode(block, 'right', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
@@ -328,6 +401,13 @@ Blockly.JavaScript['line_6'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript['angle_1'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '∠ABC';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 Blockly.JavaScript['congruence_1'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '３組の辺がそれぞれ等しいので<br>';
@@ -346,6 +426,18 @@ Blockly.JavaScript['congruence_3'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['congruence_4'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '合同な図形では対応する辺の長さは等しくなるので<br>';
+  return code;
+};
+
+Blockly.JavaScript['congruence_5'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '合同な図形では対応する角の大きさは等しくなるので<br>';
+  return code;
+};
+
 Blockly.JavaScript['given'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
@@ -353,24 +445,46 @@ Blockly.JavaScript['given'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['common'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'common', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['common_1'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '共通な'+value_name+'より'+statements_line_block+'<br>';
+  var code = '共通な辺より'+statements_line_block+'<br>';
   return code;
 };
 
-Blockly.JavaScript['reason_1'] = function(block) {
+Blockly.JavaScript['common_2'] = function(block) {
+  var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '共通な角より'+statements_line_block+'<br>';
+  return code;
+};
+
+Blockly.JavaScript['vertical angles'] = function(block) {
+  var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '対頂角は等しいので'+statements_line_block+'<br>';
+  return code;
+};
+
+Blockly.JavaScript['parallel_1'] = function(block) {
   var value_parallel = Blockly.JavaScript.valueToCode(block, 'parallel', Blockly.JavaScript.ORDER_ATOMIC);
   var value_reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_parallel+'より'+value_reason+'ので'+statements_line_block+'<br>';
+  var code =  value_parallel+'//'+value_reason+'より平行線の錯角は等しくなるので'+statements_line_block+'<br>';
   return code;
 };
 
-Blockly.JavaScript['reason_2'] = function(block) {
+Blockly.JavaScript['parallel_2'] = function(block) {
+  var value_parallel = Blockly.JavaScript.valueToCode(block, 'parallel', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  value_parallel+'//'+value_reason+'より平行線の同位角は等しくなるので'+statements_line_block+'<br>';
+  return code;
+};
+
+Blockly.JavaScript['equal'] = function(block) {
   var value_line_1 = Blockly.JavaScript.valueToCode(block, 'line_1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_line_2 = Blockly.JavaScript.valueToCode(block, 'line_2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
@@ -378,21 +492,7 @@ Blockly.JavaScript['reason_2'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['line'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '辺';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['angle'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '角';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['reason_3'] = function(block) {
+Blockly.JavaScript['congruence'] = function(block) {
   var value_line_1 = Blockly.JavaScript.valueToCode(block, 'line_1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_line_2 = Blockly.JavaScript.valueToCode(block, 'line_2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
