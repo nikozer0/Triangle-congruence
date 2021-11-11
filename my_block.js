@@ -21,8 +21,8 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
-    "type": "triangle_abc",
-    "message0": "△ABC",
+    "type": "triangle_1",
+    "message0": "△ABD",
     "inputsInline": true,
     "output": null,
     "colour": 30,
@@ -30,8 +30,8 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
-    "type": "triangle_adc",
-    "message0": "△ADC",
+    "type": "triangle_2",
+    "message0": "△ACD",
     "inputsInline": true,
     "output": null,
     "colour": 30,
@@ -49,7 +49,7 @@ Blockly.defineBlocksWithJsonArray(
   },
   {
     "type": "line_2",
-    "message0": "AD",
+    "message0": "BD",
     "inputsInline": true,
     "output": null,
     "colour": 90,
@@ -58,24 +58,6 @@ Blockly.defineBlocksWithJsonArray(
   },
   {
     "type": "line_3",
-    "message0": "BC",
-    "inputsInline": true,
-    "output": null,
-    "colour": 90,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  {
-    "type": "line_4",
-    "message0": "DC",
-    "inputsInline": true,
-    "output": null,
-    "colour": 90,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  {
-    "type": "line_5",
     "message0": "AC",
     "inputsInline": true,
     "output": null,
@@ -84,8 +66,26 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   {
+    "type": "line_4",
+    "message0": "CD",
+    "inputsInline": true,
+    "output": null,
+    "colour": 90,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "line_5",
+    "message0": "AD",
+    "inputsInline": true,
+    "output": null,
+    "colour": 90,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
     "type": "line_6",
-    "message0": "CA",
+    "message0": "DA",
     "inputsInline": true,
     "output": null,
     "colour": 90,
@@ -94,7 +94,16 @@ Blockly.defineBlocksWithJsonArray(
   },
   {
     "type": "angle_1",
-    "message0": "∠ABC",
+    "message0": "∠BAD",
+    "inputsInline": true,
+    "output": null,
+    "colour": 120,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "angle_2",
+    "message0": "∠CAD",
     "inputsInline": true,
     "output": null,
     "colour": 120,
@@ -345,16 +354,16 @@ Blockly.JavaScript['start'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['triangle_abc'] = function(block) {
+Blockly.JavaScript['triangle_1'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '△ABC';
+  var code = '△ABD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['triangle_adc'] = function(block) {
+Blockly.JavaScript['triangle_2'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '△ADC';
+  var code = '△ACD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -368,42 +377,49 @@ Blockly.JavaScript['line_1'] = function(block) {
 
 Blockly.JavaScript['line_2'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'AD';
+  var code = 'AC';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_3'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'BC';
+  var code = 'BD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_4'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'DC';
+  var code = 'CD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_5'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'AC';
+  var code = 'AD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_6'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'CA';
+  var code = 'DA';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['angle_1'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '∠ABC';
+  var code = '∠BAD';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['angle_2'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '∠CAD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
