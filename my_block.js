@@ -441,28 +441,28 @@ Blockly.JavaScript['congruence_5'] = function(block) {
 Blockly.JavaScript['given'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '仮定より'+statements_line_block+'<br>';
+  var code = '仮定より<br>'+statements_line_block+'<br>';
   return code;
 };
 
 Blockly.JavaScript['common_1'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '共通な辺より'+statements_line_block+'<br>';
+  var code = '共通な辺より<br>'+statements_line_block+'<br>';
   return code;
 };
 
 Blockly.JavaScript['common_2'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '共通な角より'+statements_line_block+'<br>';
+  var code = '共通な角より<br>'+statements_line_block+'<br>';
   return code;
 };
 
 Blockly.JavaScript['vertical angles'] = function(block) {
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code = '対頂角は等しいので'+statements_line_block+'<br>';
+  var code = '対頂角は等しいので<br>'+statements_line_block+'<br>';
   return code;
 };
 
@@ -471,7 +471,7 @@ Blockly.JavaScript['parallel_1'] = function(block) {
   var value_reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code =  value_parallel+'//'+value_reason+'より平行線の錯角は等しくなるので'+statements_line_block+'<br>';
+  var code =  value_parallel+'//'+value_reason+'より平行線の錯角は等しくなるので<br>'+statements_line_block+'<br>';
   return code;
 };
 
@@ -480,7 +480,7 @@ Blockly.JavaScript['parallel_2'] = function(block) {
   var value_reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_line_block = Blockly.JavaScript.statementToCode(block, 'line_block');
   // TODO: Assemble JavaScript into code variable.
-  var code =  value_parallel+'//'+value_reason+'より平行線の同位角は等しくなるので'+statements_line_block+'<br>';
+  var code =  value_parallel+'//'+value_reason+'より平行線の同位角は等しくなるので<br>'+statements_line_block+'<br>';
   return code;
 };
 
