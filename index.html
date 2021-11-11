@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="blockly_compressed.js"></script>
+  <script src="blocks_compressed.js"></script>
+  <script src="javascript_compressed.js"></script>
+  <script src="my_block.js"></script>
+  <script src="ja.js"></script>
+  <script src="button.js"></script>
+</head>
+<body>
+  <!--  ページ上の部分　CSSで装飾する  -->
+  <div class="myLogo" style="float:inline-start; 
+                             font-size: 170%" >
+    証明　簡単な証明をしてみよう！　
+    <button onclick="doCode()">証明作成！
+    </button>
+  </div>
+  <div style="clear:both;">
+  </div>
+<!--  Google Blockly を表示する部分  -->
+<div id="blocklyDiv" style="float:left; 
+                            height: 500px; 
+                            min-width: 50%;">
+</div>
+<!-- 問題画像を表示する部分 -->
+<div style="float:inline-start">
+ <!--img class="fit-picture" src="1.jpg"-->
+ <!-- 証明の文章を作成する部分　-->
+ <div id="SidePreview" style="padding: 10px; 
+                              margin-bottom: 10px; 
+                              border: 5px double #333333; 
+                              border-radius: 10px; 
+                              background-color: #ffff99; 
+                              float:right;
+                              height: 500px;
+                              width: 500px;">
+</div>
+</div>
+<!--  表示するブロックの定義  -->
+  <xml id="toolbox" style="display: none">
+   <category name="証明する△" colour="0">
+    <block type="start" ></block>
+   </category>
+   <category name="△の種類" colour="30">
+    <block type="triangle_1"></block>
+    <block type="triangle_2"></block>
+   </category>
+   <category name="理由(＝・≡)" colour="60">
+    <block type="equal"></block>
+    <block type="congruence"></block>
+   </category>
+   <category name="理由(仮定・共通・対頂角)" colour="60">
+    <block type="given"></block>
+    <block type="common_1"></block>
+    <block type="common_2"></block>
+    <block type="vertical angles"></block>
+   </category>
+<!--
+   <category name='理由(平行)' colour="60">
+    <block type="parallel_1"></block>
+    <block type="parallel_2"></block> 
+  </category>
+-->
+   <category name="辺" colour="90">
+    <block type="line_1"></block>
+    <block type="line_2"></block>
+    <block type="line_3"></block>
+    <block type="line_4"></block>
+    <block type="line_5"></block>
+    <block type="line_6"></block>
+   </category>
+   <category name="角" colour="120"> 
+    <block type="angle_1"></block>
+    <block type="angle_2"></block>
+   </category>
+   <category name="合同条件" colour="150">
+    <block type="congruence_1"></block>
+    <block type="congruence_2"></block>
+    <block type="congruence_3"></block>
+   </category>
+   <category name="合同性質" colour="180">
+    <block type="congruence_4"></block>
+    <block type="congruence_5"></block> 
+   </category>
+   <category name="自分でつくる" colour="90">
+      <block type="text"></block>
+   </category>
+  </xml>
+
+<!--  はじめに表示するブロックの定義  -->
+<xml id="startBlocks" style="display: none">
+  <block type="start" x="-100" y="-200" ></block>
+</xml>
+ <script>
+   var myRunCode;
+        // ワークスペース設定
+        var workspace = Blockly.inject(
+            'blocklyDiv', {
+            toolbox: document.getElementById('toolbox'),
+            maxBlocks: Infinity,
+            grid: {
+              spacing: 18,
+              length: 3,
+              colour: '#ccc',
+              snap: true,
+            },
+            trashcan: true,
+            scrollbars: true,
+            zoom: {
+              controls: true,
+              wheel: false,
+              startScale: 0.8,
+              maxScale: 3,
+              minScale: 0.3,
+              scaleSpeed: 1.2,
+          },
+          },
+        );
+  //  はじめに表示するブロック　の実行
+  Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
+   function doCode(){
+        //ブロックからプログラム（文字列）を作成
+        var code = Blockly.JavaScript.workspaceToCode(workspace);
+        //プログラムを実行
+        try{
+         var result= eval('"'+code+'"');
+         document.getElementById('SidePreview').innerHTML = result
+        }
+        catch(e){
+          alert(e);
+        }
+      }
+ </script>
+</body>
+</html>
