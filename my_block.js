@@ -377,14 +377,14 @@ Blockly.JavaScript['line_1'] = function(block) {
 
 Blockly.JavaScript['line_2'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'AC';
+  var code = 'BD';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['line_3'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = 'BD';
+  var code = 'AC';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
